@@ -10,6 +10,8 @@ const EnvSchema = z.object({
   PORT: z.coerce.number().default(3001),
   SERVICE_NAME: z.string(),
   LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace"]),
+  PUBLIC_KEY: z.string(),
+  AUTH_SERVICE: z.string(),
 });
 
 export type env = z.infer<typeof EnvSchema>;
